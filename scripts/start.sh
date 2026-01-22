@@ -14,7 +14,7 @@
 export REF_SERVER_PORT=${REF_SERVER_PORT:-59876}
 
 module load cuda/12.4.1-pw6cogp
-cd /home/jcdutoit/Projects/scratch2/grpo_lab
+# cd /path/to/Diachronic-Probability-Allignment-in-LLMs
 source .venv/bin/activate
 
 export HF_DATASETS_OFFLINE=1
@@ -30,4 +30,4 @@ bash scripts/start_ref_server.sh $REF_SERVER_PORT > logs/ref_server.log 2>&1 &
 sleep 60
 
 # Start the GRPO process (using 3 GPUs), passing the port
-deepspeed --master_port 45672 --include localhost:2 grpo_lab.py --ref-server-port $REF_SERVER_PORT > logs/grpo.log 2>&1
+deepspeed --master_port 45672 --include localhost:2 grpo.py --ref-server-port $REF_SERVER_PORT > logs/grpo.log 2>&1

@@ -18,4 +18,4 @@ export TRITON_CACHE_DIR="/tmp/triton_cache"
 # sleep 60
 
 # Start the GRPO process (using 3 GPUs), passing the port
-deepspeed --include localhost:2 grpo_lab.py --ref-server-port $REF_SERVER_PORT > logs/grpo.log 2>&1
+deepspeed --include localhost:2 grpo.py --ref-server-port $REF_SERVER_PORT > logs/grpo.log 2>&1
